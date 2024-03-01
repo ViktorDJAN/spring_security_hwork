@@ -1,11 +1,14 @@
-# Some practice of work with the Spring Security.
+# Homework with the Spring Security.
+  It is the spring boot app with simple realization of pages
+
   Here i have implemented the following tasks:
-* basic authentication
-* antMatchers
-* BCryptPasswordEncoder
-* roles and permissions
-* role based authentication
-* permission nased authentication
-* @PreAuthorize
-* CSRF Cross Site Request Forgery
-* Form Based authentication
+1. Part one
+    * basic authentication ( is disabled by comments)
+    * form authentication ( is enabled)
+2. Part two
+    * http authorization
+3. Part three
+    * users storing InMemoryUserDetailsService
+4. There are 3 user's roles in the system
+5. Logout realization
+

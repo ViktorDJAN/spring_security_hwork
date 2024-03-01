@@ -14,13 +14,13 @@ import java.util.List;
 public class StudentController {
     private static final List<Student> STUDENTS = Arrays.asList(
             new Student(1,"Jacky Chan"),
-            new Student(2,"John Ceana"),
-            new Student(3,"Mama Maria")
+            new Student(2,"John Cena"),
+            new Student(3,"Mike Bro")
     );
-    @GetMapping(path="/{studentId}") //                  that studentId  is
-    public Student getStudent(@PathVariable("studentId") Integer student_Id){  //this studentId
+    @GetMapping(path="/{studentId}")
+    public Student getStudent(@PathVariable("studentId") Integer student_Id){
         return STUDENTS.stream()
-                .filter(student -> student_Id.equals(student.getStudentId())) // returns student obj from a list with such id
+                .filter(student -> student_Id.equals(student.getStudentId()))
                 .findFirst()
                 .orElseThrow(()-> new IllegalStateException("student with id= "+ student_Id+"does not exist"));
     }

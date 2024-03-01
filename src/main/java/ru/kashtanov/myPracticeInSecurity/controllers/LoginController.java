@@ -12,8 +12,8 @@ public class LoginController {
     public String getLoginPage(){
         return "login";
     }
-    @GetMapping("courses")
+    @GetMapping("info")
     public String getCoursesPage(){
-        return "courses";
+        return "info";
     }
 }

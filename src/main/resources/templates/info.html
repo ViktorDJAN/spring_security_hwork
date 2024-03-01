@@ -1,0 +1,71 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Please sign in</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: #3e3e3e;
+            color:white;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+<h1>It is the INFO - Page</h1>
+<h4>You logged in successfully</h4>
+    </br>
+    </br>
+    <h3>User's roles and permissions</h3>
+    </br>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Role_name</th>
+            <th>Permission</th>
+            <th>Name for input</th>
+            <th>Password</th>
+            <th>Which url-addresses are available</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>STUDENT</td>
+            <td>STUDENT_READ</td>
+            <td>student</td>
+            <td>student</td>
+            <td>api/v1/students/{id}=1, 2, or 3 </td>
+        </tr>
+        <tr>
+            <td>ADMIN</td>
+            <td>STUDENT_READ,STUDENT_WRITE,COURSE-READ,COURSE-WRITE</td>
+            <td>admin</td>
+            <td>admin</td>
+            <td>"management/api/v1/students"</td>
+        </tr>
+        <tr>
+            <td>TRAINEE</td>
+            <td>STUDENT_READ,COURSE-READ</td>
+            <td>trainee</td>
+            <td>trainee</td>
+            <td>"management/api/v1/students"</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+
+
+    <h5> It is additionally the logout page if you wish to leave that page click on the button below</h5>
+<div>
+    <form class="form-signin" method="get" action="/logout"> <!-- get because // csrf().disable() -->
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Logout</button>
+    </form>
+</div>
+</div>
+</body>
+</html>

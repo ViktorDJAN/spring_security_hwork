@@ -1,7 +1,5 @@
 package ru.kashtanov.myPracticeInSecurity.students;
 
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -12,21 +10,17 @@ import java.util.List;
 public class StudentManagementController {
     private static final List<Student> STUDENTS = Arrays.asList(
             new Student(1,"Jacky Chan"),
-            new Student(2,"John Ceana"),
-            new Student(3,"Mama Maria")
+            new Student(2,"John Cena"),
+            new Student(3,"Mike Bro")
     );
 
-    //@PreAuthorize can be used instead of    andMatchers
-    // hasRole('ROLE') hasAnyRole('ROLE') hasAuthority('permission) hasAnyAuthority('permission')
-
     @GetMapping
- //   @PreAuthorize("hasAnyRole('ROLE_ADMIN, ROLE_TRAINEE')") ////    8080:management/api/v1/students
     public List<Student>getAllStudents(){
         System.out.println("getAllStudents");
         return STUDENTS;
     }
 
-    @PostMapping               //   @RequestBody binds params from request to student's fields
+    @PostMapping
     public void registerNewStudent(@RequestBody Student student){
         System.out.println("posting-method");
         System.out.println(student);
