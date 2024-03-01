@@ -20,7 +20,7 @@ public class StudentController {
     @GetMapping(path="/{studentId}") //                  that studentId  is
     public Student getStudent(@PathVariable("studentId") Integer student_Id){  //this studentId
         return STUDENTS.stream()
-                .filter(student -> student_Id.equals(student.getStudentId())) // returns student from a list with such id
+                .filter(student -> student_Id.equals(student.getStudentId())) // returns student obj from a list with such id
                 .findFirst()
                 .orElseThrow(()-> new IllegalStateException("student with id= "+ student_Id+"does not exist"));
     }
